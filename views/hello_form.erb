@@ -1,0 +1,30 @@
+
+    <form class="form-wrapper cf" action="/index" method="post">
+        <input type="text" name="artist" placeholder="Artist..." required>
+        <input type="text" name="song" placeholder="Song..." required>
+        <button type="submit">Search</button>
+	</form>   
+
+	</br>
+
+
+
+	<div class="player">
+	<audio controls>
+		<source src="<%= array[0].link %>" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	</div>
+
+	</br>
+
+	<h3>Your Songs:<h3> 
+<p>
+	<% (0...array.length).each do |i| %>
+		</br>
+		<a href = <%= array[i].link %>><%= array[i].name %><a>, <%= array[i].size %> MB
+		</br>
+	<% end %>
+</p>
+
+
